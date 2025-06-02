@@ -3,112 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Juan Camilo Sanchez Mendez</title>
+    <title>Mi Portafolio Personal</title>
+    <!-- Enlace a Google Fonts para mejorar la tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: crimson;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .perfil-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-top: 10px;
-        }
-
-        section {
-            padding: 30px 20px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contenedor-proyectos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content:space-evenly;
-            gap: 20px;
-        }
-
-        .proyecto {
-            background-color: white;
-            width: 45%;
-            min-width: 280px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            text-align: left;
-        }
-
-        .img-proyecto {
-            width: 70%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            display:block;
-            margin:auto;
-        }
-
-        a.boton {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: crimson;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        a.boton:hover {
-            background-color: darkred;
-        }
-
-        @media (max-width: 768px) {
-            .proyecto {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="preload" href="./css/normalize.css" as="style">
+    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-
-    <header>
-        <h1>Juan Camilo Sanchez Mendez</h1>
-        <p>Desarrollador de software en formacion</p>
-        <img class="perfil-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6NMTNxy1y6qMIYCkhKjVHQtUuaBwJnmfH_qOb2HNBbK5CPCmauULRN1gYLXAAaYOCpg&usqp=CAU" alt="Foto de perfil">
+    <header class="header">
+        <nav class="header__nav">
+            <h1 class="header__titulo">Mi portafolio</h1>
+            <ul class="header__menu">
+                <li class="prueba"><a class="header__menu--link" href="#">Inicio</a></li>
+                <li class="prueba"><a class="header__menu--link" href="#about">Sobre mi</a></li>
+                <li class="prueba"><a class="header__menu--link" href="#proyectos">Proyectos</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section>
-        <h2>Mis Proyectos</h2>
-
-        <div class="contenedor-proyectos">
-
-            <div class="proyecto">
-                <a href="https://juanmendez98.github.io/Hoja-de-vida/" target="_blank">
-                    <img class="img-proyecto" src="https://www.temporalsa.com/wp-content/uploads/2018/01/hoja-de-vida-animada.jpg" alt="Hoja de Vida">
-                </a>
-                <h3>Hoja de vida</h3>
-                <p>Pagina web, contiene una hoja de vida en una tabla sencilla.</p>
-                <a class="boton" href="https://juanmendez98.github.io/Hoja-de-vida/" target="_blank">Ver Proyecto</a>
+    <main class="main">
+        <section id="inicio" class="hero">
+            <div class="hero__contenido">
+                <img class="hero__contenido--imagen" 
+                    src="./img/foto de perfil.jpg" 
+                    alt="Mi foto de perfil">
+                <h2 class="hero__contenido--titulo"> Hola, soy Juan Camilo</h2>
+                <p class="hero__contenido--texto">Desarrollador de software en formacion</p>
+                <div class="hero__social">
+                    <a class="hero__social--link" 
+                        href="https://github.com/JuanMendez98/Portafolio"
+                        target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        
+                    </a>
+                    <a class="hero__social--link"
+                        href="https://riwi.io/"
+                        target="_blank">
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="32.000000pt" height="32.000000pt"
+                            viewBox="0 0 32.000000 32.000000" preserveAspectRatio="xMidYMid meet">  
+                            <g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)" stroke="none">
+                                <path d="M106 164 c-25 -80 -28 -111 -7 -88 7 7 19 41 56 162 3 6 -2 12 -9 12 -8 0 -24 -34 -40 -86z"
+                                    fill="#715AFF" />
+                                <path d="M170 225 c0 -8 7 -15 15 -15 8 0 15 -9 15 -20 0 -14 -7 -20 -24 -20
+                                    -36 0 -36 -18 -1 -56 44 -47 71 -47 40 0 -14 21 -14 24 0 36 18 15 20 61 3 78
+                                    -17 17 -48 15 -48 -3z" fill="#0E123D" />
+                                <path d="M38 169 c-22 -12 -23 -35 -2 -43 27 -10 37 -7 25 8 -8 10 -9 16 -1
+                                    21 12 7 14 25 3 25 -5 0 -16 -5 -25 -11z" fill="#715AFF" />
+                                <path d="M250 171 c0 -6 5 -13 10 -16 8 -5 7 -11 -1 -21 -12 -15 -2 -18 25 -8
+                                    22 8 20 31 -3 44 -24 12 -31 13 -31 1z" fill="#715AFF" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            
+        </section>
 
-        </div>
-    </section>
+        <section id="about" class="about">
+            <h2 class="about__titulo">Sobre mi</h2>
+            <article class="about__contenedor">
+                <p class="about__contenedor--texto">Soy un estudiante apasionado por el desarrollo de software. 
+                    Actualmente estoy aprendiendo HTML y CSS para crear paginas web.</p>
+                <p class="about__contenedor--texto">Me gusta resolver problemas y aprender cosas nuevas. Mi objetivo es 
+                    convertirme en un desarrollador de software profesional.</p>
+            </article>
+        </section>
 
+        <section id="proyectos" class="proyectos">
+            <h2 class="proyectos__titulo">Mis proyectos</h2>
+            <div class="proyectos__contenedor">
+
+                <article class="proyectos__articulos">
+                    <img class="proyectos__articulos--img" 
+                        src="./img/Hoja de vida sencilla.png" 
+                        alt="">
+                    <h3 class="proyectos__articulos--titulo">Hoja de vida</h3>
+                    <p class="proyectos__articulos--texto">Pagina web contiene una hoja de vida en una tabla sencilla.</p>   
+                    <div class="proyectos__articulos--links">
+                        <a class="proyectos__link--demo" 
+                            href="https://juanmendez98.github.io/Hoja-de-vida/"
+                            target="_blank">
+                            Ver Pagina</a>
+                        <a class="proyectos__link--codigo" 
+                            href="https://github.com/JuanMendez98/Hoja-de-vida"
+                            target="_blank">Ver Codigo</a>
+                    </div>
+                </article>
+
+                <article class="proyectos__articulos">
+                    <img class="proyectos__articulos--img"
+                        src="./img/Sabores tradicionales de bello.png" 
+                        alt="">
+                    <h3 class="proyectos__articulos--titulo">Sabores tradiciones de Bello</h3>
+                    <p class="proyectos__articulos--texto">
+                            Los autenticos sabores de la gastronomia paisa en nuestra feria cultural.</p>
+                    <div class="proyectos__articulos--links">
+                        <a class="proyectos__link--demo" 
+                            href="https://juanmendez98.github.io/Seccion-de-pagina-web/"
+                            target="_blank">
+                            Ver Pagina</a>
+                        <a class="proyectos__link--codigo" 
+                            href="https://github.com/JuanMendez98/Seccion-de-pagina-web"
+                            target="_blank">Ver Codigo</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">
+            Mi Portafolio 2025.
+        </p>
+        <p class="footer__textosmall">
+            Creado con 💙 mientras aprendo desarrollo web
+        </p>
+    </footer>
 </body>
 </html>
